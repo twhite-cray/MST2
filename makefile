@@ -3,7 +3,7 @@
 #=====================================================================
 # SystemName is the filename found under ./compilation_new/arch
 #=====================================================================
-SystemName = muir_xeon
+SystemName = poplar_v100
 
 #=====================================================================
 # Paths and internal libraries setup - This unlikely needs to be changed
