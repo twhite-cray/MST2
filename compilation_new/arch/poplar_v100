@@ -37,7 +37,7 @@ LD=$(FC) -homp
 #=====================================================================
 #FFLAGS=-I. -assume byterecl -openmp -O3 -axSSE4.2
 #FFLAGS=-I. -assume byterecl -openmp -g -C -traceback -check all -check nopointer -check noshape #-warn all
-FFLAGS=-I. -ffree -homp -J$(P3DFFT_PATH)/include
+FFLAGS=-I. -ffree -homp -I$(P3DFFT_PATH)/include
 F77FLAGS=-I. -ffixed -homp
 FPPDEFS=
 CFLAGS= -O3 -DMAX_GPU_THREADS=16 -Warray-bounds -Woverlength-strings
