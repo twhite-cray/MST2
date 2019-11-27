@@ -2411,6 +2411,7 @@ contains
 !  initialize quantities
 !  ===================================================================
    imm=0
+   invp=0
    iter=0
    dk=kqn
    dm=h/720.0d+00
@@ -3262,7 +3263,7 @@ contains
 !
    character (len=5), parameter :: sname='outws'
 !
-   integer (kind=IntKind), intent(out) :: invp
+   integer (kind=IntKind), intent(inout) :: invp
    integer (kind=IntKind), intent(in) :: imm
    integer (kind=IntKind), intent(in) :: lll
    integer (kind=IntKind), intent(in) :: nodes

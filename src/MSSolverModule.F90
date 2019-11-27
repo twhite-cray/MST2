@@ -674,7 +674,7 @@ contains
 !
    complex (kind=CmplxKind), pointer :: mat(:,:,:,:)
 !
-   nullify(mat)
+   mat => null() !nullify(mat)
 !
    call ErrorHandler('getMSGreenMatrix','Density matrix calculation is not implemented yet')
 !

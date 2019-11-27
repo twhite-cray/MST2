@@ -117,7 +117,11 @@ contains
       factors(1) = -factors(1)
    endif
 !
-   pf => factors(1:f)
+   if (f > 0) then
+     pf => factors(1:f)
+   else
+     pf => null()
+   end if
 !
    END function getPrimeFactors
 !  ===================================================================
