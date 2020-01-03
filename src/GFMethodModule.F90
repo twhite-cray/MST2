@@ -3773,7 +3773,7 @@ contains
 ! 
    complex (kind=CmplxKind), intent(in), target :: dos_array(:)
 !
-   type (ElectroStruct), intent(out) :: CurrentValue
+   type (ElectroStruct), intent(inout) :: CurrentValue
 !
    complex (kind=CmplxKind), pointer :: pca_x(:,:), pca_y(:,:), p1(:)
 !
