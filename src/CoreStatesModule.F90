@@ -2413,6 +2413,7 @@ contains
    imm=0
    invp=0
    iter=0
+   nmax = 0
    dk=kqn
    dm=h/720.0d+00
 !
@@ -3118,7 +3119,7 @@ contains
    character (len=4), parameter :: sname = 'inws'
 !
    integer (kind=IntKind), intent(in) :: invp
-   integer (kind=IntKind), intent(out) :: nmax
+   integer (kind=IntKind), intent(inout) :: nmax
    integer (kind=IntKind), intent(in) :: nws
    integer (kind=IntKind), intent(in) :: imm
    integer (kind=IntKind) :: i,j,itop,l
