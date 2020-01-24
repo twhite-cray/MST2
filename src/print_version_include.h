@@ -4,4 +4,4 @@
 ! 
    write(myunit,'("# ",t5,a,t30,": ",a)') "username",trim("twhite")
    write(myunit,'("# ",t5,a,t30,": ",a)') "system name",trim("poplar.cm.cluster")
-   write(myunit,'("# ",t5,a,t30,": ",a)') "code compiled",trim("Thursday, November 21 2019 15:56:25")
+   write(myunit,'("# ",t5,a,t30,": ",a)') "code compiled",trim("Friday, January 24 2020 11:44:06")

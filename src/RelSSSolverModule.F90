@@ -2471,6 +2471,7 @@ include '../lib/arrayTools.F90'
    if ( present(add_highl_fec) ) then
       if (add_highl_fec) then
          TmpSpace = CZERO
+         kmax_kkr_loc = 1 !!! FIX ME !!!
          do l = lofk(kmax_kkr_loc), 0, -1
             do ir = 1, nr
                TmpSpace(ir) = TmpSpace(ir) + (2*l+1)*bjl(ir,l)**2/kappa**2

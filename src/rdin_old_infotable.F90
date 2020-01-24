@@ -21,7 +21,6 @@
       character  name_type(num_atoms)*2
 !
       integer    mynod
-      integer    msgtyp
 
       integer    ntype
       integer    map(num_atoms)
@@ -231,7 +230,6 @@
             n_p_t(n2)=n_p_t(n2)+1
          endif  ! node .gt.0
       enddo
-      msgtyp=msgtyp+4
 !
 !     ==================================================================
 !     Close info_table:.................................................

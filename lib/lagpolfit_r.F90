@@ -9,7 +9,7 @@
 !
    real (kind=RealKind), intent(in) :: x, xn(nfit), yn(m)
 !
-   real (kind=RealKind), intent(out) :: yfit(m)
+   real (kind=RealKind), intent(inout) :: yfit(m)
 !
    integer (kind=IntKind) :: i, l
 !

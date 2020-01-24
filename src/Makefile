@@ -156,7 +156,7 @@ print_version:
 	rm -f $(ODIR)/print_version.o
 
 $(ODIR)/preproc: preproc.o
-	$(CC) -o $(ODIR)/preproc preproc.o
+	$(CC) $(CFLAGS) -o $(ODIR)/preproc preproc.o
 
 $(ODIR)/$(EXEC_NAME): inc_fftw $(BasicModules) $(BasicRoutines) $(AppModules) $(Modules_2) $(Routines) mst2.o $(MSTLIB) $(MPPLIB)
 	$(LD) -o $@ $(ODIR)/mst2.o $(Routines) \

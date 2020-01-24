@@ -68,11 +68,11 @@ contains
       else
          w = ONE
       endif
+      kbt = Temperature*Boltzmann
       if (present(NumPs)) then
          NumPoles = NumPs
          sigma=TWO*NumPoles*kbt
       else
-         kbt = Temperature*Boltzmann
          NumPoles = 0
          sigma=TWO*NumPoles*kbt
          do while (TWO*sigma < w+nkbts*kbt)
