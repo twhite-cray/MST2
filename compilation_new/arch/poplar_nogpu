@@ -10,16 +10,17 @@ F77=ftn
 CC=cc
 CXX=CC
 PREPROC = $(FC)
-EXEC_NAME = mst2_v100
+EXEC_NAME = mst2_cray
 
 #=====================================================================
 # Set Acceleration to 1 for using Accelerator
 #=====================================================================
-Acceleration = 1
+#Acceleration = 1
+Acceleration = 0
 
-CUDA_CXX = nvcc -arch=sm_70
+#CUDA_CXX = nvcc -arch=sm_70
 # CUDA_OPT = -I$(CUDA_PATH)/include -I. -DLSMS2 -Xcompiler "-Warray-bounds -O2 -Woverlength-strings"
-CUDA_OPT = -I$(CUDA_PATH)/include -I. -DLSMS2 -O3
+#CUDA_OPT = -I$(CUDA_PATH)/include -I. -DLSMS2 -O3
 
 ARCHV_LSMS = ar
 ARCHV_OPT = -r
@@ -37,17 +38,17 @@ LD=$(FC) -homp
 #=====================================================================
 #FFLAGS=-I. -assume byterecl -openmp -O3 -axSSE4.2
 #FFLAGS=-I. -assume byterecl -openmp -g -C -traceback -check all -check nopointer -check noshape #-warn all
-FFLAGS=-I. -ffree -homp -I$(P3DFFT_PATH)/include
-F77FLAGS=-I. -ffixed -homp
+FFLAGS=-I. -ffree -homp -hlist=m -I$(P3DFFT_PATH)/include
+F77FLAGS=-I. -ffixed -homp -hlist=m
 FPPDEFS=
-CFLAGS= -Ofast -DMAX_GPU_THREADS=16
+CFLAGS= -Ofast #-DMAX_GPU_THREADS=16 #-Warray-bounds -Woverlength-strings
 CPPDEFS=
 CPPFLAGS=-DUnderscore
 
 #=====================================================================
 # Math library (Lapack, Blas, Scalapck) linking flags
 #=====================================================================
-ADDLIBS = -lm -L$(CUDA_PATH)/lib64 -L$(CUDA_PATH)/extras/CUPTI/lib64 -lcudart -lcublas -lstdc++ -lcupti
+#ADDLIBS = -lm -L$(CUDA_PATH)/lib64 -lcudart -lcublas -lstdc++ -L$(CUDA_PATH)/extras/CUPTI/lib64 -lcupti
 
 ifdef LIBXC_PATH
 ADDLIBS += -L$(LIBXC_PATH)/lib -lxcf90 -lxc
@@ -153,7 +154,7 @@ endif
 # 9. Acceleration flags
 #    You may comment/uncomment out any following lines, if needed.
 #=====================================================================
-  FFLAGS_ACC = -DACCEL -DCUDA
+#  FFLAGS_ACC = -DACCEL -DCUDA
 
 #=====================================================================
 # No need to change the following lines.....

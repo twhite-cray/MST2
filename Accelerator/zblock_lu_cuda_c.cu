@@ -18,9 +18,9 @@ inline int omp_get_thread_num() {return 0;}
 
 extern "C" int zmatinv_prep1_ (void **a, void **b, int *n, int *lda, cudaStream_t thisstream);
 extern "C" int zmatinv_batch_ (cuDoubleComplex **A, cuDoubleComplex **Ainv, int *n, int *batch, cudaStream_t thisstream);
-extern "C" int ilaenv_(int*,char*,char*,int*,int*,int*,int*);
+extern "C" int ilaenv_(const int*,const char*,const char*,const int*,const int*,const int*,const int*);
 
-void handle_cuda_error ( cudaError_t cerr, char *errmsg ) 
+void handle_cuda_error ( const cudaError_t cerr, const char *const errmsg ) 
 {
   if ( cerr ) {
     printf ("CUDA ERROR %s \n", errmsg);
@@ -31,7 +31,7 @@ void handle_cuda_error ( cudaError_t cerr, char *errmsg )
   }
 }
 
-void handle_cublas_error ( cublasStatus_t cs, char *errmsg ) 
+void handle_cublas_error ( const cublasStatus_t cs, const char *errmsg ) 
 {
   if ( cs ) {
     printf ("cuBLAS ERROR %s \n", errmsg);

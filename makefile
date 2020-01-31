@@ -3,7 +3,7 @@
 #=====================================================================
 # SystemName is the filename found under ./compilation_new/arch
 #=====================================================================
-SystemName = poplar_v100
+SystemName = poplar_nogpu
 
 #=====================================================================
 # Paths and internal libraries setup - This unlikely needs to be changed
